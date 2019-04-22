@@ -39,10 +39,10 @@ namespace gatorUV {
 	
 	function writeCommand()
 	{
-		pins.i2cWriteNumber(lowAddress, commandRegister)
+		pins.i2cWriteNumber(lowAddress, commandRegister, NumberFormat.UInt8LE)
 	}
 	
-    //% weight=30 blockId="gatorUV_begin" block="Initialize gator:UV sensor"
+    //% weight=31 blockId="gatorUV_begin" block="Initialize gator:UV sensor"
 	export function begin() 
 	{
 		commandRegister = 0x06
@@ -68,16 +68,14 @@ namespace gatorUV {
         case gatorUVRefreshTime.four: 
 			commandRegister | (0b11 << 2);
 			break;
-        default: return -11111111
       }
 	  writeCommand();
     }
-}
 
-
-    //% weight=30 blockId="gatorUV_UV" block="Get UVA Reading"
+    //% weight=29 blockId="gatorUV_UV" block="Get UVA Reading"
     export function UV(): number{
-		let msb = pins.i2cReadNumber(highAddress, UInt8LE)
-		let lsb = pins.i2cReadNumber(lowAddress, UInt8LE)
+		let msb = pins.i2cReadNumber(highAddress, NumberFormat.UInt8LE)
+		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.UInt8LE)
 		return (msb << 8) | lsb
 	}
+}
