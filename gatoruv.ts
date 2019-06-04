@@ -34,7 +34,7 @@ namespace gatorUV {
 
 	function clearAck ()
 	{
-		pins.i2cReadNumber(araAddress, NumberFormat.Int8LE)
+		pins.i2cReadNumber(araAddress, NumberFormat.Int8LE, false)
 	}
 	
 	function writeCommand()
