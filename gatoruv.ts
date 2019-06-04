@@ -28,7 +28,7 @@
 namespace gatorUV {
 	let highAddress = 0x39
     let lowAddress = 0x38
-    let araAddress = 0x0C
+    let araAddress = 0x0B
 	let commandRegister = 0x06
     // Functions for reading UV from the gatorUV in UV or straight adv value
 
@@ -45,7 +45,6 @@ namespace gatorUV {
     //% weight=31 blockId="gatorUV_begin" block="Initialize gator:UV sensor"
 	export function begin() 
 	{
-		commandRegister = 0x06
 		clearAck()
 		writeCommand()
 	}
@@ -74,8 +73,8 @@ namespace gatorUV {
 
     //% weight=29 blockId="gatorUV_UV" block="Get UVA Reading"
     export function UV(): number{
-		let msb = pins.i2cReadNumber(highAddress, NumberFormat.UInt8LE)
-		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.UInt8LE)
+		let msb = pins.i2cReadNumber(highAddress, NumberFormat.Int8LE, false)
+		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.Int8LE, false)
 		return (msb << 8) | lsb
 	}
 }

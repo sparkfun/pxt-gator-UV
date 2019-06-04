@@ -9,7 +9,6 @@
     "files": [
         "README.md",
         "gatoruv.ts",
-        "gatoruv.cpp",
         "shims.d.ts",
         "enums.d.ts"
     ],
