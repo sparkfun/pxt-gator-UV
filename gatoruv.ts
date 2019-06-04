@@ -28,13 +28,13 @@
 namespace gatorUV {
 	let highAddress = 0x39
     let lowAddress = 0x38
-    let araAddress = 0x0B
+    let araAddress = 0x0C
 	let commandRegister = 0x06
     // Functions for reading UV from the gatorUV in UV or straight adv value
 
 	function clearAck ()
 	{
-		pins.i2cReadNumber(araAddress, NumberFormat.UInt8LE)
+		pins.i2cReadNumber(araAddress, NumberFormat.Int8LE)
 	}
 	
 	function writeCommand()
