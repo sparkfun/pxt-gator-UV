@@ -34,7 +34,7 @@ namespace gatorUV {
 
 	function clearAck ()
 	{
-		pins.i2cReadNumber(araAddress, NumberFormat.Int8LE, false)
+		pins.i2cReadNumber(araAddress, NumberFormat.UInt8LE, false)
 	}
 	
 	function writeCommand()
@@ -73,8 +73,8 @@ namespace gatorUV {
 
     //% weight=29 blockId="gatorUV_UV" block="Get UVA Reading"
     export function UV(): number{
-		let msb = pins.i2cReadNumber(highAddress, NumberFormat.Int8LE, false)
-		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.Int8LE, false)
+		let msb = pins.i2cReadNumber(highAddress, NumberFormat.UInt8LE, false)
+		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.UInt8LE, false)
 		return (msb << 8) | lsb
 	}
 }
