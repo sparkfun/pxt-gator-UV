@@ -28,7 +28,7 @@
 namespace gatorUV {
 	let highAddress = 0x39
     let lowAddress = 0x38
-    let araAddress = 0x18
+    let araAddress = 0x0C
 	let commandRegister = 0x06
     // Functions for reading UV from the gatorUV in UV or straight adv value
 
@@ -49,7 +49,7 @@ namespace gatorUV {
 		writeCommand()
 	}
     /**
-    * Reads the number
+    * Set's the refresh time for our UVA measurement
     */
     //% weight=30 blockId="gatorUV_IT" block="Set refresh time on UV Sensor to %gatorUVRefreshTime"
     export function IT(type: gatorUVRefreshTime): void{
