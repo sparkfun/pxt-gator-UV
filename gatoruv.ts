@@ -28,7 +28,7 @@
 namespace gatorUV {
 	let highAddress = 0x39
     let lowAddress = 0x38
-    let araAddress = 0x0C
+    let araAddress = 0x0B
 	let commandRegister = 0x06
     // Functions for reading UV from the gatorUV in UV or straight adv value
 
