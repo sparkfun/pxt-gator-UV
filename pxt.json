@@ -1,6 +1,6 @@
 {
     "name": "gatorUV",
-    "version": "0.0.12",
+    "version": "0.1.0",
     "description": "SparkFun gator:UV UVA Sensor",
     "license": "MIT",
     "dependencies": {
