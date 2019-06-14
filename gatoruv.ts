@@ -31,27 +31,21 @@ namespace gatorUV {
     let araAddress = 0x0C
 	let commandRegister = 0x06
     // Functions for reading UV from the gatorUV in UV or straight adv value
-
-	function clearAck ()
-	{
-		pins.i2cReadNumber(araAddress, NumberFormat.UInt8LE, false)
-	}
 	
 	function writeCommand()
 	{
 		pins.i2cWriteNumber(lowAddress, commandRegister, NumberFormat.UInt8LE)
 	}
 	
-    //% weight=31 blockId="gatorUV_begin" block="Initialize gator:UV sensor"
+    //% weight=31 blockId="gatorUV_begin" block="initialize gator:UV sensor"
 	export function begin() 
 	{
-		//clearAck()
-		writeCommand()
+		pins.i2cWriteNumber(lowAddress, commandRegister, NumberFormat.UInt8LE)
 	}
     /**
     * Set's the refresh time for our UVA measurement
     */
-    //% weight=30 blockId="gatorUV_IT" block="Set refresh time on UV Sensor to %gatorUVRefreshTime"
+    //% weight=30 blockId="gatorUV_IT" block="set refresh time on UV Sensor to %gatorUVRefreshTime"
     export function IT(type: gatorUVRefreshTime): void{
 	  commandRegister = 0x02
       switch(type){
@@ -71,7 +65,7 @@ namespace gatorUV {
 	  writeCommand();
     }
 
-    //% weight=29 blockId="gatorUV_UV" block="Get UVA Reading"
+    //% weight=29 blockId="gatorUV_UV" block="get UVA Reading"
     export function UV(): number{
 		let msb = pins.i2cReadNumber(highAddress, NumberFormat.UInt8LE, false)
 		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.UInt8LE, false)
