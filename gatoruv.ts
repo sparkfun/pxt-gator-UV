@@ -45,7 +45,7 @@ namespace gatorUV {
     //% weight=31 blockId="gatorUV_begin" block="Initialize gator:UV sensor"
 	export function begin() 
 	{
-		clearAck()
+		//clearAck()
 		writeCommand()
 	}
     /**
