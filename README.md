@@ -4,7 +4,12 @@
 
 The gator:UV is an ultraviolet light sensor that is gator-clippable to the gator:bit ecosystem
 
-![SparkFun gator:UV](https://raw.githubusercontent.com/sparkfun/pxt-gator-uv/master/icon.png)  
+[![SparkFun gator:UV](https://raw.githubusercontent.com/sparkfun/pxt-gator-uv/master/icon.png)](https://www.sparkfun.com/products/15273)
+
+[*SparkFun gator:UV (15273)*](https://www.sparkfun.com/products/15273)
+
+
+
 
 ## ~ hint
 
