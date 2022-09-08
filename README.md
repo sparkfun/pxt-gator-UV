@@ -13,7 +13,7 @@ The gator:UV is an ultraviolet light sensor that is gator-clippable to the gator
 
 ## ~ hint
 
-To use this package, go to https://makecode.microbit.org, click ``Add package`` and search for **gator-UV**. The package is located [here](https://makecode.microbit.org/pkg/sparkfun/pxt-gator-uv)
+To use this extension, go to https://makecode.microbit.org, click ``Extensions`` and search for **gator-UV**. The extension is located [here](https://makecode.microbit.org/pkg/sparkfun/pxt-gator-uv)
 
 ## ~
 
