@@ -65,7 +65,7 @@ namespace gatorUV {
 	  writeCommand();
     }
 
-    //% weight=29 blockId="gatorUV_UV" block="get UVA Reading"
+    //% weight=29 blockId="gatorUV_UV" block="UVA Reading"
     export function UV(): number{
 		let msb = pins.i2cReadNumber(highAddress, NumberFormat.UInt8LE, false)
 		let lsb = pins.i2cReadNumber(lowAddress, NumberFormat.UInt8LE, false)
