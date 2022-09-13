@@ -28,6 +28,9 @@
 	 four=4,
  }
 
+/**
+* Functions for working with the gator:UV
+*/
 //% color=#f44242 icon="\uf185"
 namespace gatorUV {
 	let highAddress = 0x39
@@ -42,9 +45,8 @@ namespace gatorUV {
 	}
 	
 	/**
-    * Initializes the sensor
+    * Initialize the sensor
     */
-
     //% weight=31 blockId="gatorUV_begin" block="initialize gator:UV sensor"
 	export function begin() 
 	{
@@ -52,7 +54,7 @@ namespace gatorUV {
 	}
 	
     /**
-    * Sets the refresh time for our UVA measurement
+    * Set the refresh time for our UVA measurement
     */
     //% weight=30 blockId="gatorUV_IT" block="set refresh time on UV Sensor to %gatorUVRefreshTime" advanced=true
     export function setRefreshTime(type: gatorUVRefreshTime): void{
