@@ -14,7 +14,11 @@
 
 
 /**
- * Functions to operate the gatorUV sensor
+ * Allows you to define the timing for light data collection
+ * half = 62.5 ms
+ * one = 125 ms
+ * two = 250 ms
+ * four = 500 ms
  */
 
  enum gatorUVRefreshTime{
@@ -37,13 +41,18 @@ namespace gatorUV {
 		pins.i2cWriteNumber(lowAddress, commandRegister, NumberFormat.UInt8LE)
 	}
 	
+	/**
+    * Initializes the sensor
+    */
+
     //% weight=31 blockId="gatorUV_begin" block="initialize gator:UV sensor"
 	export function begin() 
 	{
 		pins.i2cWriteNumber(lowAddress, commandRegister, NumberFormat.UInt8LE)
 	}
+	
     /**
-    * Set's the refresh time for our UVA measurement
+    * Sets the refresh time for our UVA measurement
     */
     //% weight=30 blockId="gatorUV_IT" block="set refresh time on UV Sensor to %gatorUVRefreshTime" advanced=true
     export function setRefreshTime(type: gatorUVRefreshTime): void{
@@ -65,6 +74,9 @@ namespace gatorUV {
 	  writeCommand();
     }
 
+    /**
+    * Get the UV measurement
+    */
     //% weight=29 blockId="gatorUV_UV" block="UVA Reading"
     export function UV(): number{
 		let msb = pins.i2cReadNumber(highAddress, NumberFormat.UInt8LE, false)
