@@ -45,8 +45,8 @@ namespace gatorUV {
 	}
 	
 	/**
-    * Initialize the sensor
-    */
+	* Initializes the gator:UV sensor, must be called on power up 
+	*/
     //% weight=31 blockId="gatorUV_begin" block="initialize gator:UV sensor"
 	export function begin() 
 	{
