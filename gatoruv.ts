@@ -56,7 +56,7 @@ namespace gatorUV {
     /**
     * Set the refresh time for our UVA measurement
     */
-    //% weight=30 blockId="gatorUV_IT" block="set refresh time on UV Sensor to %gatorUVRefreshTime" advanced=true
+    //% weight=30 blockId="gatorUV_IT" block="set refresh time on UV Sensor to %gatorUVRefreshTime"
     export function setRefreshTime(type: gatorUVRefreshTime): void{
 	  commandRegister = 0x02
       switch(type){
